@@ -2,14 +2,20 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
 
+
+
+var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var postRouter = require('./routes/post');
 
 var app = express();
 var bodyParser = require('body-parser');
+
+var session = require('express-session');
+var passport = require('passport');
+
 
 
 // view engine setup
@@ -19,10 +25,19 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('secret'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extends:false})); // recibe datos
 app.use(bodyParser.json()); // los convierte a json
+
+
+app.use(session({
+  secret:'secret',
+  resave:true,
+  saveUninitialized:true
+}));
+app.use(passport.initialize());
+app.use(passport.session())
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

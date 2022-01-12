@@ -6,8 +6,14 @@ var multer = require('multer');
 
 
 /* GET home page. */
-router.get('/',postController.timeline);
+router.get('/',(req,res,next)=>{
+    if(req.isAuthenticated()) return next();
+
+    res.redirect('/');
+},postController.timeline);
 router.get('/crear',postController.create);
+
+//peticiones post
 router.post('/',postController.save);
 
 module.exports = router;
