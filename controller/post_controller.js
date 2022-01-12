@@ -6,7 +6,7 @@ module.exports={
     timeline:function(req,res){
         postModel.getData(connection)
             .then(postsData=>{
-                console.log(postsData.rows)
+                console.log(req.user.id);
                 res.render('timeline.ejs',{posts:postsData.rows});
             })
             .catch(err=>{
