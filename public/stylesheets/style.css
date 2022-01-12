@@ -1,8 +1,33 @@
+:root{
+  --spaceSoft:#1A374D;
+  --spaceButton:#B1D0E0;
+}
+
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--spaceSoft);
+  position: relative;
+  color: white;
 }
 
 a {
   color: #00B7FF;
+}
+
+.button-add{
+  width: 65px;
+  height: 65px;
+  background-color: var(--spaceButton);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  text-decoration: none;
+  color: white;
 }
