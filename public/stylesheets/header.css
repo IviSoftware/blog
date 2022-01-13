@@ -5,11 +5,12 @@
 .header-blog{
     width: 100%;
     height: 60px;
-    background-color: #406882;
+    background-color: #1A374D;
     margin-bottom: 50px;
     padding-left: 10px;
     padding-right: 10px;
     position: relative;
+    box-shadow: 1px 6px 6px -2px rgba(5,11,15,0.52);
 }
 
 .logo{

@@ -111,6 +111,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+images/
 
 
 # Snowpack dependency directory (https://snowpack.dev/)

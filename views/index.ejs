@@ -2,20 +2,75 @@
 <html>
   <head>
     <%-include('./partials/head') %>
+    
   </head>
-  <body>
-    <form action="/" method="post">
+  <body style="background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(26,55,77,1) 51%, rgba(6,162,97,1) 100%);">
 
+  <!-- Se mostrara en escritorio -->
+   <header class="header-index">
+    <img class="logo" src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/258_Pied_Piper_logo-512.png" alt="logo" width="45px">
+
+    <form class="form-login" action="/" method="post">
       <label for="">Ingresa tu usuario</label>
       <input type="text" required  name="username">
 
       <label for="">Ingresa tu contraseña</label>
       <input type="password" required  name="password">
 
-      <input type="submit" value="entrar">
+      <input type="submit" class="button" value="entrar">
+    </form>
+   </header>
 
+
+<!-- Escritorio -->
+    <div class="index-container">
+      <div class="form-register-container">
+        
+        <h1 style="text-align: center;">Crear cuenta</h1>
+
+        <form class="form-register" action="/register/save" method="post">
+        <label for="username">Crear tu usuario</label>
+        <input type="text" required placeholder="Username"  name="usernameR">
+
+        <label for="username">Ingresa tu correo</label>
+        <input type="email" required placeholder="email@email.com"  name="emailR">
+
+        <label for="password">Crea tu contraseña</label>
+        <input type="password" required placeholder="Contraseña" name="passwordR">
+
+        <input type="submit" class="button" value="¡Comienza a leer!">
+        </form>
+
+      </div>
+
+      <div class="container-img">
+        <h2 style="text-align: right;">Unete y comienza a escribir y leer blogs</h2>
+        <img src="/images/blog_index.svg" class="img-index" alt="imagen_blog_colaboracion" >
+      </div>
+    </div>
+ 
+   <!-- Se mostrara en mobile -->
+   <div class="form-mobile">
+     <img class="logo-index" src="/images/logo.png" width="150px" alt="logo">
+     
+     <form class="form-login-mobile" action="/" method="post">
+      <label for="username">Ingresa tu usuario</label>
+      <input type="text" required placeholder="Username"  name="username">
+
+      <label for="password">Ingresa tu contraseña</label>
+      <input type="password" required placeholder="Contraseña" name="password">
+
+      <input type="submit" class="button" value="entrar">
     </form>
 
+    <div class="separate">
+      <div class="line"></div>
+      <p>O</p>
+      <div class="line"></div>
+    </div>
+    <a href="/register" class="button btn-register">Crear cuenta nueva</a>
+   </div>
 
   </body>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/head') %>
+</head>
+<body>
+    <%-include('./partials/header') %>
+
+    <div class="m-65 s-to-center l-block">
+        <article style="color: black;" class="s-shadow-bottom">
+          <!-- Póster y contenido -->
+          <div class="ed-grid m-grid-5 s-gap-2 m-pxy-2 s-bg-white s-radius-tl s-radius-tr">
+            <div class="s-pxy-2 m-pxy-0 m-cols-3">
+                <h3>¿De verdad quiere eliminar el post?</h3>
+            </div>
+          </div>
+          <footer class="s-bg-grey s-cross-center s-pxy-2 s-radius-br s-radius-bl">
+              <!-- Botón -->
+
+            <form class="confirmButtonsDelete" action="/timeline/delete/<%=id_posts%>" method="post">
+                <input class="button s-to-right" type="submit" value="Si">
+                <a class="button" style="margin-left:10px;" href="/timeline">No</a>
+            </form>
+             
+          </footer>
+        </article>
+    </div>
+
+
+</body>
+</html>

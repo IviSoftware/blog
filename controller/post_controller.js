@@ -93,5 +93,30 @@ module.exports={
             .catch(err=>{
                 console.error(err);
             })
+    },
+    saveEdit:function(req,res){
+        const {id} = req.params;
+        postModel.updateData(connection,req.body,id)
+            .then(response =>{
+                console.log(response);
+                res.redirect('/timeline/myPosts');
+            })
+            .catch(err=>{
+                console.error(err);
+            }); 
+    },
+    deleteConfirm:function(req,res){
+        const {id} = req.params;
+        res.render('confirmDeletePost',{id_posts:id});
+    },
+    delete:function(req,res){
+        const {id} = req.params;
+        postModel.deleteData(connection,id)
+            .then(response=>{
+                res.redirect('/timeline/myPosts');
+            })
+            .catch(err=>{
+                console.error(err);
+            })
     }
 }

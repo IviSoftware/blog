@@ -14,8 +14,11 @@ router.get('/cerrar',postController.cerrar);
 router.get('/leer/:id',postController.leer);
 router.get('/myPosts',protect,postController.myPosts)
 router.get('/editar/:id',protect,postController.editar)
+router.get('/eliminar/:id',protect,postController.deleteConfirm)
 
 //peticiones post
 router.post('/',postController.save);
+router.post('/edit/:id',postController.saveEdit);
+router.post('/delete/:id',postController.delete);
 
 module.exports = router;

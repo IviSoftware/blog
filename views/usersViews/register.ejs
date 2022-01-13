@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%-include('../partials/head') %>
+</head>
+<body>
+    <div class="form-mobile">
+        <img class="logo-index" src="/images/logo.png" width="150px" alt="logo">
+        
+        <form class="form-login-mobile" action="/register/save" method="post">
+         <label for="username">Crear tu usuario</label>
+         <input type="text" required placeholder="Username"  name="usernameR">
+
+         <label for="username">Ingresa tu correo</label>
+         <input type="email" required placeholder="email@email.com"  name="emailR">
+   
+         <label for="password">Crea tu contraseña</label>
+         <input type="password" required placeholder="Contraseña" name="passwordR">
+   
+         <input type="submit" class="button" value="¡Comienza a leer!">
+    </form>
+   
+       
+</body>
+</html>

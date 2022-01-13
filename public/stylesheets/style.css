@@ -8,6 +8,9 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%; /* 100% = 16px */
+}
 
 body {
   padding-top:0;
@@ -54,9 +57,133 @@ a:hover{
 
 .contenido{
   width: 80%;
-  margin: 0 auto;
+  margin: 0;
+  font-size: 2rem;
+  overflow: hidden;
 }
 
 .container-blog{
-  margin: 30px;
+  margin: 20px;
+}
+
+.confirmButtonsDelete{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos index */
+.header-index{
+  width: 100%;
+  height: 60px;
+  background-color: #1A374D;
+  margin-bottom: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+
+.form-login{
+ margin:0;
+ display: none;
+}
+
+.form-mobile{
+  width: 80%;
+  max-width:350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  
+}
+
+.form-login-mobile{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-login-mobile label,
+.form-login-mobile input{
+  margin-bottom: 8px;
+  display:inline-block;
+  width: 100%;
+}
+
+.form-login-mobile input{
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  border: solid 1px #057068;
+}
+
+
+
+.line{
+  width: 40%;
+  border-bottom: solid 1px rgb(223, 223, 223);
+}
+.separate{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.separate p{
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn-register{
+  margin-top: 20px;
+}
+
+.form-register-container,
+.index-container{
+  display: none;
+}
+
+/* Container add blog */
+
+.container-add-blog{
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.markTutorial{
+  width: 40%;
+  margin-right: 20px;
+}
+
+.container-add-blog form{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.container-add-blog form input,
+.container-add-blog form label,
+.container-add-blog textarea{
+
+  margin-bottom: 20px;
+}
+
+.container-add-blog form .form-control,
+.container-add-blog textarea{
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color:var(--spaceSoft);
+  color: white;
+  border-bottom: 2px solid white;
 }
