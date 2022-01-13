@@ -12,6 +12,8 @@ router.get('/',protect,postController.timeline);
 router.get('/crear',protect,postController.create);
 router.get('/cerrar',postController.cerrar);
 router.get('/leer/:id',postController.leer);
+router.get('/myPosts',protect,postController.myPosts)
+router.get('/editar/:id',protect,postController.editar)
 
 //peticiones post
 router.post('/',postController.save);

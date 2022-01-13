@@ -18,12 +18,20 @@
                     <% } %>
                 <% } %>
                 
-                <article>
-                    <%=posts[i].content%>
+                <article class="contenido" id="contenido">
+                    <p><%-marked((posts[i].content).toString())%></p>
+                    <div id="content">
+                        
+                    </div>
+                    
                 </article>
             </div>
         <% } %>
     <% } %>
 
+    <script>
+        var contenido = document.getElementById('content');
+        console.log(contenido);
+    </script>
 </body>
 </html>

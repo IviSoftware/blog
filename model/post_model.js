@@ -9,5 +9,8 @@ module.exports = {
         const fecha = date().format('YYYY-MM-DD HH:mm:ss');
         //interactuamos con la BD, los datos es una variable que contiene req.body
         return await conexion.query("INSERT INTO posts(title,content,date,description,usuario_id) VALUES ($1,$2,$3,$4,$5)",[dataForm.title,dataForm.content,fecha,dataForm.description,id]);
+    },
+    getDataUser:async function(conexion,idUser){
+        return await conexion.query('SELECT * FROM posts WHERE usuario_id=$1',[idUser]);
     }
 }

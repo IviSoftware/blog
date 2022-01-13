@@ -6,7 +6,7 @@
 <body>
     <%-include('./partials/header') %>
 
-    <h1 style="margin-left: 15%;">Inicio</h1>
+    <h1 style="margin-left: 15%;">Mis entradas</h1>
 
     <a href="/timeline/crear" class="button-add">
         <i class="fas fa-feather-alt"></i>
@@ -49,7 +49,8 @@
                       
                       <% } %>
                       <!-- Botón -->
-                      <a class="button s-to-right" href="/timeline/leer/<%=posts[i].id%>">Leer más</a>
+                      <a class="button s-to-right" href="/timeline/editar/<%=posts[i].id%>">Editar</a>
+                      <a class="button" style="margin-left:10px;" href="/timeline/leer/<%=posts[i].id%>">Eliminar</a>
                   </footer>
                 </article>
             </div>

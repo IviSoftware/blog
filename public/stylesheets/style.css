@@ -38,6 +38,10 @@ a {
   background-color: var(--spaceButton);
 }
 
+a:hover{
+  text-decoration: none;
+}
+
 .button-add{
   bottom: 10px;
   left: 10px;
@@ -46,4 +50,13 @@ a {
 .exit{
   bottom:10px;
   right: 10px;
+}
+
+.contenido{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container-blog{
+  margin: 30px;
 }
