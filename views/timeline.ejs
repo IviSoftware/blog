@@ -11,41 +11,47 @@
         <i class="fas fa-feather-alt"></i>
     </a>
 
+    <a href="/timeline/cerrar" class="exit">
+        <i class="fas fa-sign-out-alt"></i>
+    </a>
+
     <% for( let i = 0; i < posts.length; i++ ) { %>
-    
-        <div class="m-65 s-to-center l-block">
-            <article class="s-shadow-bottom">
-              <!-- Póster y contenido -->
-              <div class="ed-grid m-grid-5 s-gap-2 m-pxy-2 s-bg-white s-radius-tl s-radius-tr">
-                <!-- Contenedor de la imagen -->
-                <div class="m-cols-2 img-container s-ratio-16-9 s-radius-tl s-radius-tr m-radius">
-                    <img src="/assets/img/">
-                </div>
-                <!-- Contenido -->
-                <div class="s-pxy-2 m-pxy-0 m-cols-3">
-                    <h3><%=posts[i].title%></h3>
-                    <p class="s-mb-0">
-                        <h3><%=posts[i].description%></h3>
-                    </p>
-                </div>
-              </div>
-              <footer class="s-bg-grey s-cross-center s-pxy-2 s-radius-br s-radius-bl">
-                  <!-- Define el ancho máximo de la imagen -->
-                  <div class="s-10 m-5 s-mr-1">
-                      <!-- Contenedor de la imagen -->
-                      <div class="circle ">
-                          <img src="https://i.pinimg.com/originals/5c/70/34/5c70345850ac84c115e866867816d5c8.png">
-                      </div>
+            <div class="m-65 s-to-center l-block">
+                <article style="color: black;" class="s-shadow-bottom">
+                  <!-- Póster y contenido -->
+                  <div class="ed-grid m-grid-5 s-gap-2 m-pxy-2 s-bg-white s-radius-tl s-radius-tr">
+                    <!-- Contenedor de la imagen -->
+                    <div class="m-cols-2 img-container s-ratio-16-9 s-radius-tl s-radius-tr m-radius">
+                        <img src="/assets/img/">
+                    </div>
+                    <!-- Contenido -->
+                    <div class="s-pxy-2 m-pxy-0 m-cols-3">
+                        <h3><%=posts[i].title%></h3>
+                        <p class="s-mb-0">
+                            <h3><%=posts[i].description%></h3>
+                        </p>
+                    </div>
                   </div>
-                  <!-- Autor -->
-                  <p class="s-mb-0">Usuario</p>
-                  <!-- Botón -->
-                  <a class="button s-to-right" href="#">Leer más</a>
-              </footer>
-            </article>
-        </div>
-
-
+                  <footer class="s-bg-grey s-cross-center s-pxy-2 s-radius-br s-radius-bl">
+                      <!-- Define el ancho máximo de la imagen -->
+                      <div class="s-10 m-5 s-mr-1">
+                          <!-- Contenedor de la imagen -->
+                          <div class="circle ">
+                              <img src="https://i.pinimg.com/originals/5c/70/34/5c70345850ac84c115e866867816d5c8.png">
+                          </div>
+                      </div>
+                      <!-- Autor -->
+                      <% for( let user = 0; user < users.length; user++ ) { %>
+                        <% if (posts[i].usuario_id == users[user].id) { %>
+                            <p class="s-mb-0"><%=users[user].nickname%></p>
+                        <% } %>
+                      
+                      <% } %>
+                      <!-- Botón -->
+                      <a class="button s-to-right" href="/timeline/leer/<%=posts[i].id%>">Leer más</a>
+                  </footer>
+                </article>
+            </div>
     <% } %>
 </body>
 </html>

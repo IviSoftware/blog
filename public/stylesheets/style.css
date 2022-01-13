@@ -1,11 +1,16 @@
 :root{
   --spaceSoft:#1A374D;
   --spaceButton:#B1D0E0;
+  --size-button:50px;
+}
+
+*{
+  box-sizing: border-box;
 }
 
 
 body {
-  padding: 50px;
+  padding-top:0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: var(--spaceSoft);
   position: relative;
@@ -16,18 +21,29 @@ a {
   color: #00B7FF;
 }
 
-.button-add{
-  width: 65px;
-  height: 65px;
-  background-color: var(--spaceButton);
+.button-add,
+.exit{
+  width: var(--size-button);
+  height: var(--size-button);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 35px;
+  font-size: 25px;
   cursor: pointer;
   position: fixed;
-  bottom: 20px;
   text-decoration: none;
   color: white;
+  z-index: 20;
+  background-color: var(--spaceButton);
+}
+
+.button-add{
+  bottom: 10px;
+  left: 10px;
+}
+
+.exit{
+  bottom:10px;
+  right: 10px;
 }
