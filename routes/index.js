@@ -3,10 +3,18 @@ var router = express.Router();
 const aunthenticator = require('../config/authentication');
 const indexController=require('../controller/index_controller');
 
+const protect = (req,res,next)=>{
+  if(req.isAuthenticated()) return next(); /// protegemos las rutas 
+  res.redirect('/'); // si no esta logeado no le dejamos entrar
+}
 
 /* GET home page. */
 router.get('/',function(req, res, next) {
-  res.render('index');
+  if(req.user){
+    res.redirect('/timeline');
+  }else{
+    res.render('index');
+  }
 });
 
 router.get('/register',indexController.renderRegister);

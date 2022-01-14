@@ -58,12 +58,21 @@ a:hover{
 .contenido{
   width: 80%;
   margin: 0;
-  font-size: 2rem;
+  font-size:1.8rem;;
   overflow: hidden;
 }
 
+.contenido img{
+  width: 500px;
+}
+
 .container-blog{
-  margin: 20px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  
 }
 
 .confirmButtonsDelete{
@@ -187,3 +196,4 @@ a:hover{
   color: white;
   border-bottom: 2px solid white;
 }
+
