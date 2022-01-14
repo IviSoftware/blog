@@ -8,6 +8,8 @@ const protect = (req,res,next)=>{
   res.redirect('/'); // si no esta logeado no le dejamos entrar
 }
 
+
+
 /* GET home page. */
 router.get('/',function(req, res, next) {
   if(req.user){
@@ -19,7 +21,7 @@ router.get('/',function(req, res, next) {
 
 router.get('/register',indexController.renderRegister);
 
-router.post('/',aunthenticator.authenticate('local',{
+router.post('/',aunthenticator.passport.authenticate('local',{
   successRedirect: "/timeline",
   failureRedirect: "/"
 }));

@@ -1,6 +1,7 @@
 var connection = require('../config/conexion');
 const postModel = require('../model/post_model');
 const userModel = require('../model/user_model');
+const aunthenticator = require('../config/authentication');
 
 const {marked} = require('marked');
 
@@ -24,9 +25,10 @@ module.exports={
         res.render('create_blog');
     },
     save:function(req,res){
+        console.log(req.user)
         postModel.insertData(connection,req.body,req.user.id)
             .then(response =>{
-                console.log(response);
+               
                 res.redirect('/timeline');
             })
             .catch(err=>{
