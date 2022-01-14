@@ -73,3 +73,8 @@
 .img-index{
     width: 100%;
 }
+
+.button-add{
+  bottom: 10px;
+  left: 20px;
+}
